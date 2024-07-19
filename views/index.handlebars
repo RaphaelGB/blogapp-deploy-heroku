@@ -1,0 +1,36 @@
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="container-fluid py-5">
+        
+        {{#if user}}
+        <div class="alert alert-success"> Usuário logado com sucesso</div>
+        {{else}}
+
+        {{/if}}
+        <h1 class="display-5 fw-bold">Bem-vindo ao Blog do Node</h1>
+
+        <p class="col-md-8 fs-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium architecto
+            voluptatibus, quibusdam, nisi sint tenetur repudiandae ipsum reiciendis cumque aut esse aspernatur expedita.
+            Temporibus doloremque quibusdam beatae vitae dolorum veniam.</p>
+        <button class="btn btn-primary btn-lg" type="button"> Criar uma conta</button>
+    </div>
+</div>
+
+<hr>
+
+<h2>Postagens recentes</h2>
+
+{{#each postagens}}
+
+<div class="card m-3">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia Mais</button></a>
+        <hr>
+        <small> {{categoria.nome}}</small>
+        <small> Data de publicação: {{data}} </small>
+    </div>
+</div>
+{{else}}
+<h5>Nenhuma postagem</h5>
+{{/each}}
